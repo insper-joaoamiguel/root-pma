@@ -16,3 +16,9 @@
 [submodule "api/exchange"]
 	path = api/exchange
 	url = https://github.com/insper-joaoamiguel/exchange
+[submodule "api/account"]
+	path = api/account
+	url = https://github.com/insper-joaoamiguel/account
+[submodule "api/auth"]
+	path = api/auth
+	url = https://github.com/insper-joaoamiguel/auth
