@@ -144,7 +144,7 @@ services:
   # ── Exchange ──────────────────────────────────────────────────────────────
   exchange-service:
     build:
-      context: ./api/exchange-service
+      context: ./api/exchange
       dockerfile: Dockerfile
     container_name: pma-exchange
     restart: unless-stopped
