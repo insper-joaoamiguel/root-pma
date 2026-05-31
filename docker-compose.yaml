@@ -1,0 +1,168 @@
+services:
+
+  # ── Banco de dados ────────────────────────────────────────────────────────
+  mysql:
+    image: mysql:8.4
+    container_name: pma-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: pma
+      MYSQL_PASSWORD: pma123
+    volumes:
+      - mysql-data:/var/lib/mysql   # dados persistidos no volume AWS
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - pma-network
+
+  # ── Gateway ───────────────────────────────────────────────────────────────
+  gateway-service:
+    build:
+      context: ./api/gateway-service
+      dockerfile: Dockerfile
+    container_name: pma-gateway
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      auth-service:
+        condition: service_healthy
+      product-service:
+        condition: service_healthy
+      account-service:
+        condition: service_healthy
+      exchange-service:
+        condition: service_healthy
+    networks:
+      - pma-network
+
+  # ── Auth ──────────────────────────────────────────────────────────────────
+  auth-service:
+    build:
+      context: ./api/auth-service
+      dockerfile: Dockerfile
+    container_name: pma-auth
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/auth_db
+      - SPRING_DATASOURCE_USERNAME=pma
+      - SPRING_DATASOURCE_PASSWORD=pma123
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8082/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - pma-network
+
+  # ── Account ───────────────────────────────────────────────────────────────
+  account-service:
+    build:
+      context: ./api/account-service
+      dockerfile: Dockerfile
+    container_name: pma-account
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/account_db
+      - SPRING_DATASOURCE_USERNAME=pma
+      - SPRING_DATASOURCE_PASSWORD=pma123
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8083/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - pma-network
+
+  # ── Product ───────────────────────────────────────────────────────────────
+  product-service:
+    build:
+      context: ./api/product-service
+      dockerfile: Dockerfile
+    container_name: pma-product
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/product_db
+      - SPRING_DATASOURCE_USERNAME=pma
+      - SPRING_DATASOURCE_PASSWORD=pma123
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - pma-network
+
+  # ── Order ─────────────────────────────────────────────────────────────────
+  order-service:
+    build:
+      context: ./api/order-service
+      dockerfile: Dockerfile
+    container_name: pma-order
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/order_db
+      - SPRING_DATASOURCE_USERNAME=pma
+      - SPRING_DATASOURCE_PASSWORD=pma123
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8084/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - pma-network
+
+  # ── Exchange ──────────────────────────────────────────────────────────────
+  exchange-service:
+    build:
+      context: ./api/exchange-service
+      dockerfile: Dockerfile
+    container_name: pma-exchange
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EXCHANGE_API_BASE_URL=https://economia.awesomeapi.com.br/json/last
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8081/actuator/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    networks:
+      - pma-network
+
+volumes:
+  mysql-data:    # volume gerenciado pelo Docker — na AWS persiste no EBS
+
+networks:
+  pma-network:
+    driver: bridge
