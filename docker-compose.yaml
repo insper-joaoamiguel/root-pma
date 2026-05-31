@@ -117,30 +117,6 @@ services:
     networks:
       - pma-network
 
-  # ── Order ─────────────────────────────────────────────────────────────────
-  order-service:
-    build:
-      context: ./api/order-service
-      dockerfile: Dockerfile
-    container_name: pma-order
-    restart: unless-stopped
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/order_db
-      - SPRING_DATASOURCE_USERNAME=pma
-      - SPRING_DATASOURCE_PASSWORD=pma123
-    depends_on:
-      mysql:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:8084/actuator/health || exit 1"]
-      interval: 15s
-      timeout: 5s
-      retries: 5
-      start_period: 40s
-    networks:
-      - pma-network
-
   # ── Exchange ──────────────────────────────────────────────────────────────
   exchange-service:
     build:
