@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: auth-service
-          image: pma/auth-service:latest
+          image: joaoamiguel/auth-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8082
           env:
@@ -38,14 +39,23 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8082
-            initialDelaySeconds: 30
+            initialDelaySeconds: 40
             periodSeconds: 10
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8082
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 15
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service

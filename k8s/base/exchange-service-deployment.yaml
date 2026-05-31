@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: exchange-service
-          image: pma/exchange-service:latest
+          image: joaoamiguel/exchange-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8081
           env:
@@ -28,14 +29,23 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8081
-            initialDelaySeconds: 20
+            initialDelaySeconds: 30
             periodSeconds: 10
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8081
-            initialDelaySeconds: 40
+            initialDelaySeconds: 60
             periodSeconds: 15
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service

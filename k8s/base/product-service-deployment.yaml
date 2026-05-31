@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: pma/product-service:latest
+          image: joaoamiguel/product-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8084
           env:
@@ -37,14 +38,23 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8084
-            initialDelaySeconds: 30
+            initialDelaySeconds: 40
             periodSeconds: 10
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8084
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 15
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service
