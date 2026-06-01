@@ -1,5 +1,7 @@
 # Order API
 
+Feita por: Enzo Dell'Oso
+
 A Order API centraliza a criacao e consulta de pedidos da loja online. Ela trabalha com o usuario autenticado e referencia produtos ja cadastrados.
 
 ## Responsabilidade
