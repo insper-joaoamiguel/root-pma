@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/architecture/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/architecture/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/communication/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/communication/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/stack/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/stack/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/exchange/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/exchange/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/integration/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/exchange/integration/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/exchange/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/bottlenecks/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/bottlenecks/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/integrations/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/integrations/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/model/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/model/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/order/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/product/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/product/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/model/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/product/model/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma/product/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
 </urlset>
