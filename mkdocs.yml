@@ -2,9 +2,9 @@ site_name: Microsservicos da Loja Online
 site_description: Documentacao tecnica do sistema com Order, Product e Exchange APIs
 site_author: Enzo Dell Oso
 
-site_url: https://SEU-USUARIO.github.io/root-repo
-repo_url: https://github.com/SEU-USUARIO/root-repo
-repo_name: root-repo
+site_url: https://insper-joaoamiguel.github.io/root-pma.git
+repo_url: https://github.com/insper-joaoamiguel/root-pma.git
+repo_name: root-pma
 
 theme:
   name: material
