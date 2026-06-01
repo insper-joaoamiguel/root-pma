@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: gateway-service
-          image: pma/gateway-service:latest
+          image: joaoamiguel/gateway-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
@@ -41,26 +42,41 @@ spec:
                   key: AUTH_SERVICE_SOLVE_URL
           readinessProbe:
             httpGet:
-              path: /actuator/health
+              path: /gateway/actuator/health
               port: 8080
-            initialDelaySeconds: 30
+            initialDelaySeconds: 40
             periodSeconds: 10
+            failureThreshold: 6
           livenessProbe:
             httpGet:
-              path: /actuator/health
+              path: /gateway/actuator/health
               port: 8080
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 15
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
 ---
+# LoadBalancer — o EKS provisiona um AWS Classic Load Balancer automaticamente
+# O endereço público aparece em: kubectl get svc gateway-service -n pma
 apiVersion: v1
 kind: Service
 metadata:
   name: gateway-service
   namespace: pma
+  annotations:
+    # Força o LB a ser externo (internet-facing)
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
 spec:
   selector:
     app: gateway-service
-  type: LoadBalancer   # Em AWS EKS cria um ALB automaticamente
+  type: LoadBalancer
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 8080

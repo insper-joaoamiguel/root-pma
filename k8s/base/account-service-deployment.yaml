@@ -15,7 +15,9 @@ spec:
     spec:
       containers:
         - name: account-service
-          image: pma/account-service:latest
+          # Substitua pelo seu usuário Docker Hub: joaoamiguel/account-service:latest
+          image: joaoamiguel/account-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8083
           env:
@@ -24,11 +26,21 @@ spec:
                 configMapKeyRef:
                   name: pma-config
                   key: SPRING_PROFILES_ACTIVE
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://mysql:3306/account_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
-            - name: SPRING_DATASOURCE_USERNAME
+            - name: DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: pma-config
+                  key: MYSQL_HOST
+            - name: DATABASE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: pma-config
+                  key: MYSQL_PORT
+            - name: DATABASE_DB
+              value: "account_db"
+            - name: DATABASE_USERNAME
               value: "pma"
-            - name: SPRING_DATASOURCE_PASSWORD
+            - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pma-secrets
@@ -37,14 +49,23 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8083
-            initialDelaySeconds: 30
+            initialDelaySeconds: 40
             periodSeconds: 10
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8083
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 15
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service
