@@ -16,6 +16,7 @@ O sistema foi organizado em microsservicos independentes para permitir evolucao 
 - **Order API**: orquestra pedidos e integra com os demais servicos.
 - **Product API**: armazena e consulta produtos.
 - **Exchange API**: consulta taxas em servico terceiro e retorna conversoes.
+- **Account**: conta do usuário
 
 ## Observacao sobre o fluxo
 
