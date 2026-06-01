@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/architecture/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/architecture/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/communication/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/communication/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/stack/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/stack/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/exchange/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/exchange/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/exchange/integration/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/integration/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/exchange/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/exchange/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/bottlenecks/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/bottlenecks/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/integrations/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/integrations/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/model/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/model/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/order/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/order/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/product/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/product/endpoints/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/endpoints/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/product/model/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/model/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
-         <loc>https://SEU-USUARIO.github.io/root-repo/product/tests/</loc>
+         <loc>https://insper-joaoamiguel.github.io/root-pma.git/product/tests/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
 </urlset>
