@@ -1,0 +1,77 @@
+site_name: Microsservicos da Loja Online
+site_description: Documentacao tecnica do sistema com Order, Product e Exchange APIs
+site_author: Enzo Dell Oso
+
+site_url: https://SEU-USUARIO.github.io/root-repo
+repo_url: https://github.com/SEU-USUARIO/root-repo
+repo_name: root-repo
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Alternar para modo escuro
+    - scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - search.highlight
+    - search.share
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+  - glightbox
+
+nav:
+  - Inicio: index.md
+  - Visao geral:
+      - Arquitetura: architecture.md
+      - Comunicacao entre servicos: communication.md
+      - Stack tecnologica: stack.md
+  - Order API:
+      - Visao geral: order/index.md
+      - Endpoints: order/endpoints.md
+      - Modelo de dados: order/model.md
+      - Integracoes: order/integrations.md
+      - Bottlenecks: order/bottlenecks.md
+      - Testes: order/tests.md
+  - Product API:
+      - Visao geral: product/index.md
+      - Endpoints: product/endpoints.md
+      - Modelo de dados: product/model.md
+      - Testes: product/tests.md
+  - Exchange API:
+      - Visao geral: exchange/index.md
+      - Endpoints: exchange/endpoints.md
+      - Integracao externa: exchange/integration.md
+      - Testes: exchange/tests.md
