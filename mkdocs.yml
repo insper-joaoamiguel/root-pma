@@ -2,7 +2,7 @@ site_name: Microsservicos da Loja Online
 site_description: Documentacao tecnica do sistema com Order, Product e Exchange APIs
 site_author: Enzo Dell Oso
 
-site_url: https://insper-joaoamiguel.github.io/root-pma.git
+site_url: https://insper-joaoamiguel.github.io/root-pma
 repo_url: https://github.com/insper-joaoamiguel/root-pma.git
 repo_name: root-pma
 
@@ -59,6 +59,7 @@ nav:
       - Comunicacao entre servicos: communication.md
       - Stack tecnologica: stack.md
       - Infraestrutura: infraestrutura.md
+      - PaaS: paas.md
   - Order API:
       - Visao geral: order/index.md
       - Endpoints: order/endpoints.md
@@ -76,3 +77,6 @@ nav:
       - Endpoints: exchange/endpoints.md
       - Integracao externa: exchange/integration.md
       - Testes: exchange/tests.md
+  - Load Testing: load-testing.md
+  - Custos & SLA: costs.md
+  - CI/CD: cicd.md
