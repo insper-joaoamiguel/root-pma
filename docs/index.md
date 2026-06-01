@@ -10,6 +10,8 @@ O sistema é composto por três serviços principais:
 
 Cada microsserviço possui responsabilidade bem definida, comunicação por API e autenticação baseada em JWT.
 
+Link do repositório principal: [Root](https://github.com/insper-joaoamiguel/root-pma)
+
 ---
 
 ## Visão geral da plataforma
