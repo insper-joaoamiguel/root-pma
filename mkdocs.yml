@@ -58,6 +58,7 @@ nav:
       - Arquitetura: architecture.md
       - Comunicacao entre servicos: communication.md
       - Stack tecnologica: stack.md
+      - Infraestrutura: infraestrutura.md
   - Order API:
       - Visao geral: order/index.md
       - Endpoints: order/endpoints.md
